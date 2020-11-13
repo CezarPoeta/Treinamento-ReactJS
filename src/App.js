@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Navigation from './components/Navigation';
+
+import { todos } from './todos.json';
 
 class App extends Component {
-  render(){
-    return(
+
+  constructor() {
+    super();
+    this.state = {
+      title: 'Aplicação de tarefas',
+      ntareas: 10
+    }
+  }
+
+  render() {
+    return (
       <div className="App">
-        <Navigation titulo="Meu Primeiro título"/>
-        <Navigation titulo="Meu Segundo título"/>
-        
-      <img src={logo} className="App-logo" alt="logo"/>               
-    </div>
+        <nav className="navbar navbar-dark bg-dark">
+          <a href="" className="text-white">
+            {this.state.title} - {this.state.ntareas}
+          </a>
+        </nav>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
 
     )
   }
